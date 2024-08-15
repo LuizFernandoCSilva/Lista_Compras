@@ -76,7 +76,7 @@ form.addEventListener('submit', function(e) {
       // Remove a classe delete da seção após a animação de desvanecimento
       setTimeout(() => {
         section.classList.remove('delete');
-      }, 500); // Certifique-se de que o tempo seja suficiente para a animação terminar
+      },3000); // Certifique-se de que o tempo seja suficiente para a animação terminar
     });
   }
 });
