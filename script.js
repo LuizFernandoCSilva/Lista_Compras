@@ -5,7 +5,7 @@ const section = document.querySelector('section');
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-  const regex = /\d+/g 
+  const regex = /\d+/g;
   const value = input.value.replace(regex, '');
 
   if (value) {
@@ -52,24 +52,31 @@ form.addEventListener('submit', function(e) {
     input.value = '';
 
     // Adiciona os event listeners 
-    newButtonCheckBox.addEventListener('click', (event) => {
+    newButtonCheckBox.addEventListener('click', () => {
       newImgConfirm.classList.toggle('toggle');
     });
 
-    newButtonDumpster.addEventListener('click', (event) => {
+    newButtonDumpster.addEventListener('click', () => {
       newUl.classList.add('fade-out');
-      section.classList.add("delete");
+      section.classList.add('delete');
 
-      const buttonX = document.getElementById('x')
-
+      const buttonX = document.getElementById('x');
       if (buttonX) {
-        buttonX.addEventListener('click', (event) => {
-          section.classList.remove("delete");
+        buttonX.addEventListener('click', () => {
+          section.classList.remove('delete');
         });
       }
+
+      // Remove o elemento após a animação de desvanecimento
+      newUl.addEventListener('transitionend', function handleTransitionEnd(event) {
+        newUl.remove(); // Remove o elemento do DOM
+        newUl.removeEventListener('transitionend', handleTransitionEnd); // Remove o listener para evitar chamadas múltiplas
+      });
+
+      // Remove a classe delete da seção após a animação de desvanecimento
       setTimeout(() => {
-        section.classList.remove("delete");
-      }, 3000);
+        section.classList.remove('delete');
+      }, 500); // Certifique-se de que o tempo seja suficiente para a animação terminar
     });
   }
 });
