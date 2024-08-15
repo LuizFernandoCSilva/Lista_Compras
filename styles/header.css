@@ -1,0 +1,15 @@
+header{
+  width: 100%;
+  margin-bottom: 40px;
+}
+button#back{
+  background:none;
+  border:none;
+  color: var(--color-brand);
+  font: var(--text-link);
+  margin-bottom: 16px;
+}
+h1{
+  font: var(--text-title);
+  color: var(--content-primary);
+}

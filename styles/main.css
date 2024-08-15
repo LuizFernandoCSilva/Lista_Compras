@@ -1,0 +1,158 @@
+main{
+  width: 100%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+form input{
+  font: var(--text-label);
+  color: var(--content-secondary);
+  margin-bottom: 16px;
+  background-color: var(--bg-color-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-primary);
+  padding-block: 11px;
+  padding-left: 19px;
+}
+form input:focus {
+  border-color: var(--border-hover); 
+  outline: none; /* Remove o contorno padrão do navegador para o input em foco */
+}
+form input::placeholder{
+  color: var(--content-tertiary);
+}
+
+form button{
+  border-radius: 12px;
+  border: none;
+  background-color: var(--color-brand);
+  color: var(--always-white);
+  height: 44px;
+  transition: transform 0.3s linear;
+}
+form button:hover{
+  background-color: var(--color-brand-hover);
+  transform:scale(1.1);
+}
+form button:focus{
+  outline: none;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  margin-bottom: 12px;
+  justify-content: space-between;
+  border-radius: 12px;
+  border: 1px solid var(--border-primary);
+  border-color: var(--border-primary);
+  height: 57px;
+  align-items: center;
+}
+ul.fade-out {
+  transition: opacity 0.5s ease, height 0.5s ease;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+ul #checkbox{
+  border-radius: 6px;
+  border: 1px solid var(--content-tertiary);
+  background-color: var(--bg-color-secondary);
+  width: 20px;
+  height: 20px;
+  margin-left: 12px;
+  font-size: 0;
+}
+ul #checkbox:hover{
+  border-color: var(--color-danger);
+}
+ul #checkbox:focus{
+  outline: none;
+}
+ul #confirm{
+  display: none;
+  width: 100%;
+}
+ul #confirm.toggle{
+  display:block;
+}
+ul #dumpster{
+  padding-right: 12px;
+  background: none;
+  border: none;
+  font-size: 0;
+  transition: transform 0.3s linear;
+}
+ul #dumpster:hover{
+  transform:scale(1.1);
+}
+ul #dumpster:focus{
+  outline: none;
+}
+
+ul li{
+  display: flex;
+  flex-direction: row;  
+  gap: 12px;
+}
+#compras{
+  color: var(--content-secondary);
+  font: var(--text-paragraph);
+ 
+}
+
+#Dumpster{
+  padding-right: 12px;
+}
+
+section{
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+img#exclamation{
+  padding-left: 12px;
+}
+#x{
+  padding-right: 12px;
+  background:none;
+  border:none;
+  transition: transform 0.3s linear;
+}
+#x:hover{
+  transform:scale(1.2);
+}
+#x:focus{
+  outline: none;
+}
+section.delete{
+  font: var(--text-label);
+  background-color: var(--color-danger);
+  color: var(--always-white);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 44px;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; 
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .container{
+    width: 700px; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .container{
+    width: 900px; 
+  }
+}
